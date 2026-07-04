@@ -1,15 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.compose") version libs.versions.kotlin.get()   // uses the same version
 }
 
 android {
     namespace = "university.hits.tsuenglish"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36   // correct syntax: just an integer
 
     defaultConfig {
         applicationId = "university.hits.tsuenglish"
